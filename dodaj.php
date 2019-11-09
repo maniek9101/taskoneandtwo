@@ -10,7 +10,6 @@
         die();
     }
 
-    $isdb = new dbModel($db);
     $isdb -> add_to_db();  
     $isdb -> close_connect();
     

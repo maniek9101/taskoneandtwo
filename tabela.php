@@ -31,7 +31,7 @@
         if(isset($_GET['par1']))
         {
             $parametr = $_GET['par1'];
-            $isdb = new dbModel($db);
+            
             $isdb->check_table_exist($sqlcode); // check table exist in db
 
             switch($parametr)

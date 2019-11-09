@@ -1,8 +1,3 @@
-<?php
-    include_once 'data/dbinit.php';
-    include_once 'model/model.php';
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -33,10 +28,12 @@
         <a href="tabela.php">Idź do wyświetlenia tabeli</a>
     </form>
     <?php
+        include_once 'data/dbinit.php';
+        include_once 'model/model.php';
+        session_start();
 
         $sqlcode = file_get_contents('data/dbcode.sql'); //get sql to create table in db
 
-        $isdb = new dbModel($db);
         $isdb->check_table_exist($sqlcode); // check table exist in db
         $isdb->close_connect();
 
